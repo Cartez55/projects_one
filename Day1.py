@@ -8,7 +8,7 @@
 # Варант с наименованием переменных
 # print("{num} КБ должно хватить для любых задач".format(num=640))
 # F строка
-subject = 'Лисий'
+subject = 'Рыжый'
 autor = 'Rutgert'
 mas = {1:1, 2:2, 3:3}
 for i in mas:
