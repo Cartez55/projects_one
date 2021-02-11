@@ -1,7 +1,7 @@
 import csv
 
-delitemtr = ';'
-with open("csv\\export_f.csv", 'r', newline="", encoding='utf-8') as file:
+
+with open("C:\\Users\\18411029\\Documents\\PythonCourses\\csv\\export_f.csv", 'r', newline="", encoding='utf-8') as file:
     # Считываем файл, указывая делитель ";"
     reader = csv.DictReader(file, delimiter=';')
     # Проходимся циклом по строке дата
