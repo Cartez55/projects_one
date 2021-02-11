@@ -50,7 +50,7 @@ def unzip(fname):
 
 if __name__ == '__main__':
 
-    mailSigma = 'RVVagner@sberbank.ru'
+    mailSigma = ''
     currentPath = os.getcwd()
 
     while True:
