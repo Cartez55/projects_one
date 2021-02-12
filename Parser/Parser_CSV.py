@@ -9,7 +9,7 @@ with open("export_1.csv", 'r', newline="", encoding="UTF-8") as fp:
     outlook = win32.Dispatch('Outlook.Application')
     # Создаем письмо
     mail = outlook.CreateItem(0)
-    adress_client = ['rvvagner@sberbank.ru;', ' Vishnyakova.Ol.Al1@sberbank.ru;']
+    adress_client = ['rvvagner@sberbank.ru;' ' Vishnyakova.Ol.Al1@sberbank.ru;']
     # Итерацией добавляем в письмо адрессатов
     for i in adress_client:
         mail.To = i
