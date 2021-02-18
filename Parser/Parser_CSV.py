@@ -10,10 +10,10 @@ with open("export_1.csv", 'r', newline="", encoding="UTF-8") as fp:
     # Создаем письмо
     mail = outlook.CreateItem(0)
     adress_client = ['rvvagner@sberbank.ru;' ' Vishnyakova.Ol.Al1@sberbank.ru;' 'Pinchuk.A.And@sberbank.ru;' 'sysaprykina@sberbank.ru;']
+    mail.To = 'rvvagner@sberbank.ru;'
     # Итерацией добавляем в письмо адрессатов
-    for i in adress_client:
-        mail.To = i
-        # print(i)
+    # for i in adress_client:
+    #     mail.To = i
     # Тема письма
     mail.Subject = 'Автоматическая рассылка. Тест'
     for row in reader:
