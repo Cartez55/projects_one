@@ -12,18 +12,17 @@
 # autor = 'Rutgert'
 # mas = {1:1, 2:2, 3:3}
 # for i in mas:
-    # print(f'{subject} человек {i} корень зла. ({autor})')
+# print(f'{subject} человек {i} корень зла. ({autor})')
 
 # x = 0
 # y = 12
 # name = x or y
 # print(name)
-n = 0
-while n < 3:
-    if n > 0:
-        continue
-    else:
-        break
-    n += 1
 
-print(n)
+# num = 13
+# Методы объекта num
+# print(num.__add__(2))
+
+stra = 'stroka'
+# Методы объекта stra
+print(stra.find('a'))
