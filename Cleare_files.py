@@ -2,7 +2,7 @@ import shutil
 import os
 import glob
 
-directory_patch = r'C:\Users\Professional\Desktop\Нерасортировано'
+directory_patch = r'C:\Users\Professional\Documents\Нерасортировано'
 from_patch = r'C:\Users\Professional\Desktop'
 extension = '*.mp3', '*.docx', '*.doc', '*.mp4', '*.pdf', '*.jpg', '*.png'
 
