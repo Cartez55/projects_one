@@ -1,20 +1,20 @@
 from datetime import *
 
-name, date = []
-name.append(input('Name:'))
-date.append(input('Date:'))
+name = []
+date = []
 
-name_date = {}
+i
+while True:
+    name.append(input('Name: '))
+    date.append(input('Date: '))
 
-for i in range(0, len(name)):
-    name_date[name[i]] = date[i]
+
+    name_date = {}
+
+    for i in range(0, len(name)):
+        name_date[name[i]] = date[i]
 
 # Проверка
-print(name_date['Вагнер'])
-
-# name = ('John', 'Nicholas', 'Mercy')
-# age = 25
-#
-# dict_sample = dict.fromkeys(name, age)
-#
-# print(dict_sample)
+# print(name_date['Вагнер'])
+# print(name[0])
+print(type(date[0]))
