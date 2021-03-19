@@ -1,6 +1,7 @@
 import re
 from random import choice
 import json
+import glob
 
 # ПОИСК СЛОВ ПРИ ПОМОЩИ REGEXP
 
@@ -15,23 +16,40 @@ import json
 
 # ПОИСК СЛОВ ИЗ СПИСКА
 
+# МЕТОД 1 ИЗ ФАЙЛА JSON
+
+# Находим любой файл json
+
 for file in glob.glob("*.json"):
-    scenarios_dir = file
+    directory = file
 
-with open(scenarios_dir, "r", encoding="utf-8") as scenario:
-    data = json.load(scenario)
-    guid = list(data["scenario"].keys())[0]
-    numb = guid[5:10]
+word_find = ['не р']
 
+with open(directory, "r", encoding="utf-8") as item:
+    list_word = json.load(item)
+    # Итерация по файлу json
+    for word in list_word.items():
+        # Итерация по списку слов для поиска
+        for list_w in word_find:
+            # Итерация по списку из json
+            with open("find_word.txt", "w") as file:
+                for line in word[1]:
+                    if list_w in line:
+                        file.write('"' + line + '"' + "\n")
+                        print(''.join(line))
 
-word_find = ['wor', 'goo']
+# МЕТОД 2 ИЗ СПИСКА
 
-welcome = ["Hello world! Goodbye world!", "Ted Nelson, the inventor of hypertext",
-           "This book was more a stream-of-consciousness collage than anything else"]
-f = []
-
-
-
+# Слова для поиска
+# word_find = []
+# Список в котором ищем
+# welcome = []
+#
+# # Поиск слов или части слова из списка
+# for ls in word_find:
+#     for line in welcome:
+#         if ls in line:
+#             print(''.join(line))
 
 # Рандомная комбинация текста
 # phrase1 = []
