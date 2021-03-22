@@ -14,6 +14,7 @@ import glob
 #     if gr:
 #         print(gr.group())
 
+
 # ПОИСК СЛОВ ИЗ СПИСКА
 
 # МЕТОД 1 ИЗ ФАЙЛА JSON
@@ -36,20 +37,20 @@ with open(directory, "r", encoding="utf-8") as item:
                 for line in word[1]:
                     if list_w in line:
                         file.write('"' + line + '"' + "\n")
-                        print(''.join(line))
+                        print('"' + line + '"' + "\n")
 
 # МЕТОД 2 ИЗ СПИСКА
 
-# Слова для поиска
+# # Слова для поиска
 # word_find = []
-# Список в котором ищем
-# welcome = []
+# # Список в котором ищем
+# word_lst = []
 #
 # # Поиск слов или части слова из списка
 # for ls in word_find:
-#     for line in welcome:
+#     for line in word_lst:
 #         if ls in line:
-#             print(''.join(line))
+#             print(''.join(line), end="")
 
 # Рандомная комбинация текста
 # phrase1 = []
