@@ -21,23 +21,40 @@ import glob
 
 # Находим любой файл json
 
-for file in glob.glob("*.json"):
-    directory = file
-
+# for file in glob.glob("*.json"):
+#     directory = file
+#
 word_find = ['не р']
+#
+#
+# with open(directory, "r", encoding="utf-8") as item:
+#     list_word = json.load(item)
+#     # Итерация по файлу json
+#     for word in list_word.items():
+#         # Итерация по списку слов для поиска
+#         for list_w in word_find:
+#             # Итерация по списку из json
+#             with open("find_word.txt", "w") as file:
+#                 for line in word[1]:
+#                     if list_w in line:
+#                         file.write('"' + line + '"' + "\n")
+#                         print('"' + line + '"' + "\n")
 
-with open(directory, "r", encoding="utf-8") as item:
-    list_word = json.load(item)
-    # Итерация по файлу json
-    for word in list_word.items():
-        # Итерация по списку слов для поиска
-        for list_w in word_find:
-            # Итерация по списку из json
-            with open("find_word.txt", "w") as file:
-                for line in word[1]:
-                    if list_w in line:
-                        file.write('"' + line + '"' + "\n")
-                        print('"' + line + '"' + "\n")
+for file in glob.glob("word\\*.txt"):
+    txt = file
+
+with open(txt, "r+", encoding="utf-8") as item:
+    lst = item.readlines()
+    with open("find.txt", "w") as fs:
+        # Итерация по файлу txt
+        for word in lst:
+            for list_w in word_find:
+                if list_w in word:
+                    fs.write(word + "\n")
+                    # item.write(word.replace(list_w, "блоха"))
+                    lst.remove(word)
+                    print(list_w)
+                    print(word + "\n")
 
 # МЕТОД 2 ИЗ СПИСКА
 
