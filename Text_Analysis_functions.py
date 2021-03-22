@@ -24,7 +24,7 @@ import glob
 # for file in glob.glob("*.json"):
 #     directory = file
 #
-word_find = ['не р']
+word_find = ['не р', 'Не р']
 #
 #
 # with open(directory, "r", encoding="utf-8") as item:
