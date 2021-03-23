@@ -43,17 +43,18 @@ word_find = ['не р', 'Не р']
 for file in glob.glob("word\\*.txt"):
     txt = file
 
+list_remove = []
+
 with open(txt, "r+", encoding="utf-8") as item:
     lst = item.readlines()
-    with open("find.txt", "w") as fs:
+    with open("find.txt", "w", encoding="utf-8") as fs:
         # Итерация по файлу txt
         for word in lst:
             for list_w in word_find:
                 if list_w in word:
                     fs.write(word + "\n")
-                    # item.write(word.replace(list_w, "блоха"))
-                    lst.remove(word)
-                    print(list_w)
+                    # list_remove.append(re.sub(r"^.*не р.*", "", word.lower()))
+                    item.writelines(list_remove)
                     print(word + "\n")
 
 # МЕТОД 2 ИЗ СПИСКА
