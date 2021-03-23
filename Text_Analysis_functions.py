@@ -54,7 +54,7 @@ list_test = ["Не работает сберпрайм",
              "Что такое сбер прайм",
              ]
 
-print(list_test)
+# print(list_test)
 
 #  РАБОТ С JSON ФАЙЛОМ
 
@@ -74,32 +74,23 @@ print(list_test)
 for file in glob.glob("word\\*.txt"):
     txt = file
 
-list_remove = []
-
-
-def remove_string():
+with open(txt, "r+", encoding="utf-8") as element:
+    list_item = element.readlines()
+    list_remove = []
+    print(list_item)
     for w_f in word_find:
-        list_remove = []
-        for i in list_test:
+        for i in list_item:
             list_r = re.search(f"^.*{w_f}.*", i)
             if list_r:
                 list_r.group()
                 list_remove.append(list_r.group())
                 for e_r in list_remove:
                     if e_r in i:
-                        list_test = i.replace(e_r, "")
-    print(list_test)
+                        list_item = i.replace(i, "")
+                        print(list_item)
+    # element.writelines(list_item)
 
 #
-# def str_remove():
-#     for w_f in word_find:
-#         list_remove = []
-#         list_r = re.search(f"^.*{w_f}.*", word)
-#         if list_r:
-#             list_remove.append(list_r.group())
-#             print(type(list_remove))
-#     for e_r in list_remove:
-#         print(word.replace(e_r, "блоха"))
 #
 #
 # with open(txt, "r+", encoding="utf-8") as item:
@@ -110,8 +101,9 @@ def remove_string():
 #             for list_w in word_find:
 #                 if list_w in word:
 #                     fs.write(word + "\n")
-#                 # str_remove()
 #                     print(word + "\n")
+
+# remove_string()
 
 # МЕТОД 2 ИЗ СПИСКА
 
