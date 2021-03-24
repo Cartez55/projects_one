@@ -24,7 +24,8 @@ import glob
 # for file in glob.glob("*.json"):
 #     directory = file
 #
-word_find = ['не р', 'Не р']
+word_find = ["Хочу"
+             ]
 
 # ЭКСПЕРИМЕНТ
 
@@ -71,37 +72,39 @@ list_test = ["Не работает сберпрайм",
 #                         file.write('"' + line + '"' + "\n")
 #                         print('"' + line + '"' + "\n")
 
+#  РАБОТ С TXT ФАЙЛОМ
+
 for file in glob.glob("word\\*.txt"):
     txt = file
+#
+# with open(txt, "r+", encoding="utf-8") as element:
+#     list_item = element.readlines()
+#     list_remove = []
+#     print(list_item)
+#     for w_f in word_find:
+#         for i in list_item:
+#             list_r = re.search(f"^.*{w_f}.*", i)
+#             if list_r:
+#                 list_r.group()
+#                 list_remove.append(list_r.group())
+#                 for e_r in list_remove:
+#                     if e_r in i:
+#                         list_item = i.replace(i, "")
+#                         print(list_item)
+# element.writelines(list_item)
 
-with open(txt, "r+", encoding="utf-8") as element:
-    list_item = element.readlines()
-    list_remove = []
-    print(list_item)
-    for w_f in word_find:
-        for i in list_item:
-            list_r = re.search(f"^.*{w_f}.*", i)
-            if list_r:
-                list_r.group()
-                list_remove.append(list_r.group())
-                for e_r in list_remove:
-                    if e_r in i:
-                        list_item = i.replace(i, "")
-                        print(list_item)
-    # element.writelines(list_item)
-
 #
 #
 #
-# with open(txt, "r+", encoding="utf-8") as item:
-#     lst = item.readlines()
-#     with open("find.txt", "w", encoding="utf-8") as fs:
-#         # Итерация по файлу txt
-#         for word in lst:
-#             for list_w in word_find:
-#                 if list_w in word:
-#                     fs.write(word + "\n")
-#                     print(word + "\n")
+with open(txt, "r+", encoding="utf-8") as item:
+    lst = item.readlines()
+    with open("find.txt", "w", encoding="utf-8") as fs:
+        # Итерация по файлу txt
+        for word in lst:
+            for list_w in word_find:
+                if list_w in word:
+                    fs.write(word)
+                    print(word + "\n")
 
 # remove_string()
 
