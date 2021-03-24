@@ -23,6 +23,10 @@ for i in range(0, len(name)):
 
 
 print(name_date)
+
+
+
+
 # Проверка
 write_name()
 # print(name[0])
