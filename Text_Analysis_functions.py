@@ -5,7 +5,7 @@ import glob
 
 # ПОИСК СЛОВ ПРИ ПОМОЩИ REGEXP - LIST
 
-ls = []
+# ls = []
 
 # # Регулярка проверяется на сайте https://regex101.com/
 
@@ -16,15 +16,15 @@ ls = []
 
 # ПОИСК СЛОВ ПРИ ПОМОЩИ REGEXP - TXT
 
-for file in glob.glob("word\\*.txt"):
-    txt_file = file
-
-with open(txt_file, "r", encoding="utf-8") as items:
-    lst = items.readlines()
-    for i in lst:
-        gr_ls = re.search("(сбер.{6}|Сбер.{6})|(с.{3} + прайм)|(прайм|ПРАЙМ)", i)
-        if gr_ls:
-            print(gr_ls.group())
+# for file in glob.glob("word\\*.txt"):
+#     txt_file = file
+#
+# with open(txt_file, "r", encoding="utf-8") as items:
+#     lst = items.readlines()
+#     for i in lst:
+#         gr_ls = re.search("(сбер.{6}|Сбер.{6})|(с.{3} + прайм)|(прайм|ПРАЙМ)", i)
+#         if gr_ls:
+#             print(gr_ls.group())
 
 # ПОИСК СЛОВ ИЗ СПИСКА
 
@@ -35,8 +35,8 @@ with open(txt_file, "r", encoding="utf-8") as items:
 # for file in glob.glob("*.json"):
 #     directory = file
 #
-# word_find = ["Хочу"
-#              ]
+word_find = ["изменить", "Поменя"
+             ]
 #
 # # ЭКСПЕРИМЕНТ
 #
@@ -85,39 +85,44 @@ with open(txt_file, "r", encoding="utf-8") as items:
 #
 # #  РАБОТ С TXT ФАЙЛОМ
 #
-# for file in glob.glob("word\\*.txt"):
-#     txt = file
-# #
-# # with open(txt, "r+", encoding="utf-8") as element:
-# #     list_item = element.readlines()
-# #     list_remove = []
-# #     print(list_item)
-# #     for w_f in word_find:
-# #         for i in list_item:
-# #             list_r = re.search(f"^.*{w_f}.*", i)
-# #             if list_r:
-# #                 list_r.group()
-# #                 list_remove.append(list_r.group())
-# #                 for e_r in list_remove:
-# #                     if e_r in i:
-# #                         list_item = i.replace(i, "")
-# #                         print(list_item)
-# # element.writelines(list_item)
-#
-# #
-# #
-# #
-# with open(txt, "r+", encoding="utf-8") as item:
-#     lst = item.readlines()
-#     with open("find.txt", "w", encoding="utf-8") as fs:
-#         # Итерация по файлу txt
-#         for word in lst:
-#             for list_w in word_find:
-#                 if list_w in word:
-#                     fs.write(word)
-#                     print(word + "\n")
 
-# remove_string()
+
+for file in glob.glob("word\\*.txt"):
+    txt = file
+
+
+def remove_word():
+    # #
+    with open(txt, "r+", encoding="utf-8") as element:
+        list_item = element.readlines()
+        list_remove = []
+        list_item = list(set(list_item))
+        for w_f in word_find:
+            for i in list_item:
+                list_r = re.search(f"^.*{w_f}.*", i, re.I)
+                if list_r:
+                    list_remove.append(i)
+        for line in list_remove:
+            if line in list_item:
+                list_item.remove(line)
+        with open("remove\\word_remove.txt", "w", encoding="utf-8") as items:
+            items.writelines(list_item)
+
+
+#
+with open(txt, "r", encoding="utf-8") as item:
+    lst = item.readlines()
+    with open("find.txt", "w", encoding="utf-8") as fs:
+        # Итерация по файлу txt
+        for word in lst:
+            for list_w in word_find:
+                if list_w in word:
+                    fs.write(word)
+                    # Чтобы не удалять слова из списка закоменть
+                    remove_word()
+                    print(word + "\n")
+
+#
 
 # МЕТОД 2 ИЗ СПИСКА
 
