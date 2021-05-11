@@ -4,7 +4,7 @@ import glob
 
 directory_patch = r'C:\Users\Professional\Documents\Нерасортировано'
 from_patch = r'C:\Users\Professional\Desktop'
-extension = '*.mp3', '*.docx', '*.doc', '*.mp4', '*.pdf', '*.jpg', '*.png', '*.rar'
+extension = '*.mp3', "*.mp4", '*.docx', '*.doc', '*.mp4', '*.pdf', '*.jpg', '*.png', '*.rar'
 
 while True:
     for e in extension:

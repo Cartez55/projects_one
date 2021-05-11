@@ -1,0 +1,32 @@
+# Обращение к объектам json
+{
+  "squadName": "Super hero squad",
+  "homeTown": "Metro\n City",
+  "formed": 2016,
+  "secretBase": "Super \ntower",
+  "active": true,
+  "members": [
+    {
+      "name": "Molecule  Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes\n",
+      "powers": [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+      ]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": " <br>",
+      "powers": [
+        "Million tonne<br> punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    }
+  ]
+}
+
+['members'][0]['secretIdentity'] - > Dan Jukes\n
