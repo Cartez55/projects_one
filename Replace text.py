@@ -20,21 +20,17 @@ replace_elements = ["  ", "] (", "]\n(", " <br>", "<br> ", '<br>"', '\n"']
 #             else:
 #                 print('false')
 
-with open(scenario_path, "r", encoding = "utf-8") as file:
+with open(scenario_path, "r", encoding="utf-8") as file:
     text_files = json.load(file)
     object_path = text_files['members'][1]['secretIdentity']
     # print(object_path)
-    with open(scenario_path, "w", encoding = "utf-8") as file_write:
+    with open(scenario_path, "w", encoding="utf-8") as file_write:
         for text in text_files:
-            for elements in range(len(text_files['members'])):
-                # print(text_files['members'][elements]['secretIdentity'])
-                for rep_element in replace_elements:
-                    if text.find(rep_element):
-                        text_files = text['members'][elements]['secretIdentity'].replace("] (", "](")
-                        text_files = text['members'][elements]['secretIdentity'].replace("]\n(", "](")
-                        text_files = text['members'][elements]['secretIdentity'].replace("<br> ", "<br>")
-                        text_files = text['members'][elements]['secretIdentity'].replace("<br> ", "<br>")
-                        text_files = text['members'][elements]['secretIdentity'].replace(" <br>", "<br>")
-                        text_files = text['members'][elements]['secretIdentity'].replace('<br>"', '"')
-                        text_files = text['members'][elements]['secretIdentity'].replace('\n"', '"')
-                    json.dump(text_files, file_write)
+            text.replace("] (", "](")
+            text.replace("]\n(", "](")
+            text.replace("<br> ", "<br>")
+            text.replace("<br> ", "<br>")
+            text.replace(" <br>", "<br>")
+            text.replace('<br>"', '"')
+            text.replace('\n"', '"')
+            json.dump(text, file_write, indent=2)
