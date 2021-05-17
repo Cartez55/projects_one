@@ -27,10 +27,10 @@ with open(scenario_path, "r", encoding="utf-8") as file:
     with open(scenario_path, "w", encoding="utf-8") as file_write:
         for text in text_files:
             text.replace("] (", "](")
-            text.replace("]\n(", "](")
-            text.replace("<br> ", "<br>")
-            text.replace("<br> ", "<br>")
-            text.replace(" <br>", "<br>")
-            text.replace('<br>"', '"')
-            text.replace('\n"', '"')
-            json.dump(text, file_write, indent=2)
+            # text.replace("]\n(", "](")
+            # text.replace("<br> ", "<br>")
+            # text.replace("<br> ", "<br>")
+            # text.replace(" <br>", "<br>")
+            # text.replace('<br>"', '"')
+            # text.replace('\n"', '"')
+            json.dump(text, file_write, indent=4)
