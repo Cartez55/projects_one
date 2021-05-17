@@ -36,5 +36,22 @@ import random
 # print(numbers)
 
 # КОРТЕЖ(TUPLE) - НЕИЗМЕНЯЕМЫЕ СПИСКИ
-number = ()
-immutables = (int, str, tuple)
+# number = ()
+# immutables = (int, str, tuple)
+
+# _____________________
+
+# СЛОВАРЬ[DICT]
+# Определение словаря
+
+# empty_dict = {}
+# empty_dict = dict()
+
+# Проверка наличия ключа в словаре через оператор in -> 'imutable' in example_dict
+# Добавление элемента в словарь exaple_dict['New_key'] = 'New_value' (var1)
+# Добавление элемента в словарь exaple_dict.update({'New_key' : 'New_value'}) (var2)
+# Удаление элемента из словаря del exaple_dict['Name_key'] (var1)
+# Удаление элемента из словаря del exaple_dict.pop('Name_key') (var2)
+# Проверка ключа 'Key' и добавление если нет в словаре - ключ, значение exaple_dict = {} -> exaple_dict.setdefault('Key', 'New_value')
+#
+
