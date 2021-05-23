@@ -98,4 +98,8 @@ for word in zen_python_text.split():
     if word not in zen_map:
         zen_map[clean_word] = 0
     else:
-        zen_map.update(word)
+        zen_map[clean_word] += 1
+
+print(zen_map)
+
+zen_items = zen_map.items()
