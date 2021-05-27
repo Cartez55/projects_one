@@ -8,12 +8,13 @@ with open("CSI диалоги апрель.csv", 'r', newline="",
     # Проходимся циклом по строке дата
     with open("exp.txt", "w", encoding="UTF-8") as p:
         for row in reader:
-            if row["CHAT_TXT"]:
+            search_letter = re.search("[А-Я]", row["CHAT_TXT"])
+            if search_letter:
+                print(search_letter.group())
                 # unique_symbols = set(row["CHAT_TXT"])
                 # print(unique_symbols)
-                # print(row["CHAT_TXT"].split('!,?'), "\n\n")
-
-                # print(re.split('!,?,.', row["CHAT_TXT"]), "\n\n")
+                # print(re.split('[А-Я]', row["CHAT_TXT"]), "\n\n")
+                # print(re.split('!,?,.', row["CHAT_TXT"]), "\n")
                 # p.write(row["CHAT_TXT"] + "\n\n"
                 bot = []
                 human = []

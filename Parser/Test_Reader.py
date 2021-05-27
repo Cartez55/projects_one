@@ -5,14 +5,14 @@ phrase = '<name>, рад снова вас видеть! О чм поговор�
 for row in phrase:
     if row:
         # print(row["CHAT_TXT"].split('!'), "\n\n")
-        print(re.split('!,?,.', row["CHAT_TXT"]), "\n\n")
+        print(re.split('!', row), '\n')
         # p.write(row["CHAT_TXT"] + "\n\n"
         bot = []
         human = []
         all_phrase = []
-        for strings in row["CHAT_TXT"]:
+        for strings in row:
             if len(strings) > 40:
                 bot.append(strings)
             else:
                 human.append(strings)
-    # print(bot, "\n")
+                # print(bot, "\n")
