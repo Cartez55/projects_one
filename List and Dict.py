@@ -60,11 +60,11 @@ import random
 # }
 
 # for key in example_dict:
-    # print(key)
+# print(key)
 # Итерация по элементам(key, value) с помощью метода items(), key - keys(), value - values()
 
 # for value in example_dict.values():
-    # print('{}'.format(value))
+# print('{}'.format(value))
 
 # _____________________
 
@@ -88,18 +88,31 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 '''
-my_word = '''dfdf sdsd lol'''
-zen_map = dict()
-# Разбиваем строки на слова по пробелу split()
-for word in zen_python_text.split():
-    # Удаляем символы в строке (strip)
-    clean_word = word.strip('!,.').lower()
-    # Если
-    if word not in zen_map:
-        zen_map[clean_word] = 0
-    else:
-        zen_map[clean_word] += 1
 
-print(zen_map)
 
-zen_items = zen_map.items()
+# my_word = '''dfdf sdsd lol'''
+# zen_map = dict()
+# # Разбиваем строки на слова по пробелу split()
+# for word in zen_python_text.split():
+#     # Удаляем символы в строке (strip)
+#     clean_word = word.strip('!,.').lower()
+#     # Если
+#     if word not in zen_map:
+#         zen_map[clean_word] = 0
+#     else:
+#         zen_map[clean_word] += 1
+#
+# print(zen_map)
+#
+# zen_items = zen_map.items()
+
+
+def tickets(people):
+    for money in people:
+        if int(people[-1] - 25) != sum(people):
+            print("NO")
+        else:
+            print("YES")
+
+
+tickets(([25, 25, 50]))
