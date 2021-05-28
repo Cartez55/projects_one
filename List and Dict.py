@@ -108,11 +108,12 @@ Namespaces are one honking great idea -- let's do more of those!
 
 
 def tickets(people):
-    for money in people:
-        if int(people[-1] - 25) != sum(people):
+    for index in range(0, len(people)):
+        int(people[index]) - 25
+        if int(people[-1] - 25) != 25:
             print("NO")
         else:
             print("YES")
 
 
-tickets(([25, 25, 50]))
+tickets(([25, 25, 50, 50, 100]))
