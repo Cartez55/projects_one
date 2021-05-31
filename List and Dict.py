@@ -106,14 +106,3 @@ Namespaces are one honking great idea -- let's do more of those!
 #
 # zen_items = zen_map.items()
 
-
-def tickets(people):
-    for index in range(0, len(people)):
-        int(people[index]) - 25
-        if int(people[-1] - 25) != 25:
-            print("NO")
-        else:
-            print("YES")
-
-
-tickets(([25, 25, 50, 50, 100]))
