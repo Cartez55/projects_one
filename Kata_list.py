@@ -9,7 +9,7 @@ def tickets(people):
         for index in range(0, len(people)):
             if people[0] > 25:
                 print('NO')
-            if people[index] == 50 or people[index] == 100:
+            if people[index] > 25:
                 short_change.append(people[index])
             elif people[index] < 0:
                 print('NO')
@@ -20,11 +20,12 @@ def tickets(people):
         print(f"balance: {balance} | short_change : {short_change}")
 
         for cash in range(0, len(short_change)):
-            del balance[0]
             if (short_change[cash] - balance[cash]) < 0:
                 break
             else:
-                result_balance.append(short_change[cash] - balance[cash], balance)
+                result_balance.append(short_change[cash] - balance[cash])
+                result_balance.extend(balance)
+                del balance[len(result_balance)]
         print(f"result_balance: {result_balance} | short_change : {short_change}")
 
         if sum(balance[0:-1]) == (balance[-1]) or balance[-2] == balance[-1]:
@@ -33,7 +34,7 @@ def tickets(people):
             print('NO')
     except:
         print('NO')
-
+        print(f"result_balance: {result_balance} | short_change : {short_change}")
 
 #     # if len(people) <= 3:
 #     #     if int(people[-1]) // 2 == 25:
@@ -71,4 +72,4 @@ def tickets(people):
 #         except:
 #             print ("NO")
 #
-tickets(([25, 25, 100]))
+tickets(([25, 25, 50, 100]))
