@@ -7,17 +7,13 @@ def tickets(people):
 
     try:
         for index in range(0, len(people)):
-            if people[0] > 25:
-                print('NO')
+            if people[index] < 0:
+                return ('NO-отрицательное')
             if people[index] > 25:
                 short_change.append(people[index])
-            elif people[index] < 0:
-                print('NO')
             else:
                 balance.append(people[index])
-            if len(short_change) > len(balance):
-                print('NO')
-        print(f"balance: {balance} | short_change : {short_change}")
+        # print(f"balance: {balance} | short_change : {short_change}")
 
         for cash in range(0, len(short_change)):
             if (short_change[cash] - balance[cash]) < 0:
@@ -26,29 +22,26 @@ def tickets(people):
                 result_balance.append(short_change[cash] - balance[cash])
                 result_balance.extend(balance)
                 del balance[len(result_balance)]
-        print(f"result_balance: {result_balance} | short_change : {short_change}")
+        # print(f"result_balance: {result_balance} | short_change : {short_change}")
 
-        if sum(balance[0:-1]) == (balance[-1]) or balance[-2] == balance[-1]:
-            print('YES')
+        if sum(result_balance[0:-1]) == (result_balance[-1]) or result_balance[-2] == result_balance[-1]:
+            return ('YES')
         else:
-            print('NO')
+            return ('NO-условие2')
     except:
-        print('NO')
-        print(f"result_balance: {result_balance} | short_change : {short_change}")
+        return ('NO-ошибка')
 
-#     # if len(people) <= 3:
-#     #     if int(people[-1]) // 2 == 25:
-#     #         print("YES")
-#     #     else:
-#     #         print("NO")
-#     # else:
-#     #     print(int(people[index]) + int(people[-2]))
-#     #     if int(people[index]) + int(people[-2]) == int(people[-1]) - 25:
-#     #         print("YES")
-#     #     else:
-#     #         print("NO")
-#
-#
+    # if len(people) <= 3:
+    #     if int(people[-1]) // 2 == 25:
+    #         return("YES")
+    #     else:
+    #         return("NO")
+    # else:
+    #     return(int(people[index]) + int(people[-2]))
+    #     if int(people[index]) + int(people[-2]) == int(people[-1]) - 25:
+    #         return("YES")
+    #     else:
+    #         return("NO")
 
 
 # def tickets(people):
@@ -59,17 +52,18 @@ def tickets(people):
 #                     int(people[index]) - 25
 #                     if len(people) <= 3:
 #                         if int(people[-1]) // 2 == 25:
-#                             print ("YES")
+#                             return ("YES")
 #                         else:
-#                             print ("NO")
+#                             return ("NO")
 #                     else:
 #                         if int(people[index]) + int(people[-2]) == int(people[-1]) - 25:
-#                             print ("YES")
+#                             return ("YES")
 #                         else:
-#                             print ("NO")
+#                             return ("NO")
 #             else:
-#                 print ("NO")
+#                 return ("NO")
 #         except:
-#             print ("NO")
+#             return ("NO")
 #
-tickets(([25, 25, 50, 100]))
+# tickets(([25, 25, 50]))
+print(tickets(([25, 25, 50])))
