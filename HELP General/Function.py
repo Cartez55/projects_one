@@ -169,3 +169,99 @@
 # Пример использования zip and map в одной строке
 # list(zip(filter(bool, range(3)), [x for x in range(3) if x]))
 # -> [(1,1), (2,2)]
+
+# ДЕКОРАТОР
+# Декоратор - фукция которая принимает фукнцию и возвращает функцию
+# def decorator(func):
+#     return func
+#
+# @decorator
+# def decorated():
+#     print('Hello')
+#
+# decorated = decorator(decorated)
+
+# def logger(func):
+#     def wrapped(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         with open('HELP General/log.txt', 'w') as file:
+#             file.write(str(result))
+#         return result
+#
+#     return wrapped
+# Logger оборачивает summator и модифицирует функцию summator при помощи wrapped
+# Summator просто считает сумму в списке, а Wrapped записывает файл в лог
+# @logger
+# def summator(num_list):
+#     return sum(num_list)
+#
+# print(summator([1, 2, 3, 4, 5]))
+
+import functools
+
+
+# def logger(func):
+# @functools.wraps(func) - возвращает исходное имя модифицируемой функции т.е summator
+# def wrapped(*args, **kwargs):
+#     result = func(*args, **kwargs)
+#     with open('HELP General/log.txt', 'w') as file:
+#         file.write(str(result))
+#     return result
+# @logger
+# def summator(num_list):
+#     return sum(num_list)
+# -----------------------------
+# Вызывается функция logger которой передается имя файла
+# def logger(file_name):
+#     # в decorator в данном случае summator
+#     def decorator(func):
+#         # в wrapped передаются аргументы summator
+#         def wrapped(*args, **kwargs):
+#             # Вызывается исходная функция summator
+#             result = func(*args, **kwargs)
+#             # Записываем результат выполнения в файл
+#             with open(file_name, 'w') as file:
+#                 file.write(str(result))
+#             return result
+#         return wrapped
+#     return decorator
+
+# Декоратор logger применяется к функции summator
+# @logger('HELP General/new_log.txt')
+# def summator(num_list):
+#     return sum(num_list)
+#
+# print(summator([1, 2, 3, 5, 6, 7, 8]))
+# -----------------------------
+# Создаем декоратор bold
+def bold(func):
+    # Создаем обертку wrapped
+    def wrapped():
+        return '<b>' + func() + '</b>'
+    return wrapped
+
+# Создаем декоратор italic
+def italic(func):
+    # Создаем обертку wrapped
+    def wrapped():
+        return '<i>' + func() + '</i>'
+    return wrapped
+
+# Классический вид декоратора:
+# hello = bold(italic(hello))
+# !!!Декораторы применяются снизу вверх!!!
+
+# Применяем декоратор bold
+@bold
+# Применяем декоратор italic
+@italic
+def hello():
+    return 'Hello world'
+
+print(hello())
+# -> <b><i>Hello world<i><b>
+
+
+# ГЕНЕРАТОР
+
+#
