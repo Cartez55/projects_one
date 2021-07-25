@@ -35,5 +35,4 @@ try:
                 else:
                     print(None)
 except:
-    with open("storage_path", 'w', encoding='utf-8') as file:
-        json.dump(file)
+    f = open("storage_path", 'w')
