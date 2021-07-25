@@ -18,20 +18,21 @@ from random import choice
 #     return (os.sep).join(NLPpath.split('/'))
 #
 
-def
 def random_phrase():
-def file_catch():
-    while True:
-        for fname in os.listdir():
-            if fname.endswith('.json'):
-                scenarioGUID = fname[:-5]
-                choosenWL = askquestion(title="Найден файл", message=("Загрузить на WL?"))
-                if choosenWL == 'yes':
-                    scen_word = random_phrase()
-                    WL = True
-                    load_file(scenarioGUID, WL, scen_word)
-                else:
-                    load_file(scenarioGUID)
+
+
+    def file_catch():
+        while True:
+            for fname in os.listdir():
+                if fname.endswith('.json'):
+                    scenarioGUID = fname[:-5]
+                    choosenWL = askquestion(title="Найден файл", message=("Загрузить на WL?"))
+                    if choosenWL == 'yes':
+                        scen_word = random_phrase()
+                        WL = True
+                        load_file(scenarioGUID, WL, scen_word)
+                    else:
+                        load_file(scenarioGUID)
 
 
 def load_file(scenarioGUID, WL=False, scen_word=''):

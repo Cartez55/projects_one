@@ -54,13 +54,13 @@ import random
 # Удаление элемента из словаря del example_dict.pop('Name_key') (var2)
 # Проверка ключа 'Key' и добавление если нет в словаре - ключ, значение exaple_dict = {} -> exaple_dict.setdefault('Key', 'New_value')
 # Итерация по словарю по ключу или по значению:
-# example_dict = {
-#     1: 'dsdsd',
-#     2: 'rgfgd'
-# }
+example_dict = {
+    1: 'dsdsd',
+    2: 'rgfgd'
+}
 
-# for key in example_dict:
-# print(key)
+for key in example_dict:
+    print(example_dict[key])
 # Итерация по элементам(key, value) с помощью метода items(), key - keys(), value - values()
 
 # for value in example_dict.values():

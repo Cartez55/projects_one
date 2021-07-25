@@ -1,6 +1,6 @@
 import json
 
-scenario_path = r'Replace/текст.json'
+scenario_path = r'../Replace/текст.json'
 # form_path =
 replace_elements = ["  ", "] (", "]\n(", " <br>", "<br> ", '<br>"', '\n"']
 

@@ -147,3 +147,13 @@ Namespaces are one honking great idea -- let's do more of those!
 # # Выводим количество слов из списка
 # print(Counter(cleaned_list).most_common())
 
+# Рандомный GUID
+
+string = 'ODHrUBHVNKYjSGIrRaThrergJbzOOsQZAAkmilgiOIZtTYnaHUNfWfMjShxzOVpQjhrryrvxAslNvqqFldFuSzoisphGLQcBzWRMcxPXyxJE'
+letter = 'abcdefghijklmnopqrstuvwxyz'
+letter_upper = letter.upper()
+random_GUID = []
+for i in range(0, 36):
+    random_GUID.append(choice(letter+letter_upper))
+
+print(''.join(random_GUID))
