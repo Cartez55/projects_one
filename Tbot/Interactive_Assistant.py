@@ -4,6 +4,8 @@ from Config import BOT_TOKEN
 import asyncio
 
 # Old code using GET request
+# API_link = r'https://api.telegram.org/bot1832025275:AAHHwS6s5TJLLHPhfttlRPEGk_a0LLEPiR0'
+# # Получаем апдейт с последним сообщением
 # update = requests.get(API_link + '/getUpdates?offset=-1').json()
 # message = update['result'][0]['message']
 # chat_id = message['from']['id']
